@@ -26,8 +26,8 @@ class AddContact extends React.Component {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    // value={this.state.name}
-                    // onChange={(e) => this.setState({ name: e.target.value })}
+                    value={this.state.name}
+                    onChange={(e) => this.setState({ name: e.target.value })}
                     />
                 </div>
                 <div className="field">
@@ -36,8 +36,8 @@ class AddContact extends React.Component {
                     type="text"
                     name="email"
                     placeholder="Email"
-                    // value={this.state.email}
-                    // onChange={(e) => this.setState({ email: e.target.value })}
+                    value={this.state.email}
+                    onChange={(e) => this.setState({ email: e.target.value })}
                     />
                 </div>
                 <button className="ui button blue">Add</button>
