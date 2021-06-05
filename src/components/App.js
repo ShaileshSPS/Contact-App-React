@@ -5,7 +5,17 @@ import AddContact from './AddContact';
 import ContactList from './ContactList';
 
 function App() {
+  const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (retriveContacts) setContacts(retriveContacts);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContactHandler = (contact) => {
     setContacts([...contacts, contact]);
